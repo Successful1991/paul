@@ -42,7 +42,7 @@ class BasketElem {
 		<div class="product__info">
 		<div class="product__top">
 		<div class="product__name">${el.name}</div>
-	<div class="product__price"> <span class="js-product__price">${el.price * amount}</span>₴</div>
+	<div class="product__price"> <span class="js-product__price">${el.price * amount}</span> UAH </div>
 	</div>
 	<div class="quantity__name">Quantity</div>
 		<div class="product__center">

@@ -12,9 +12,9 @@ div(class="call-form-popup mfp-with-anim mfp-hide js-open-form-popup" id="call-f
 						.amount-group
 							.choose-name Number of guests:
 							.choose.js-choose(data-max-number="20")
-								button.choose__minus.js-choose-minus(type="button") -
-								input(type="text" name="goest" align="center" value="1" readonly="").js-form__input.choose__input
-								button.choose__plus.js-choose-plus(type="button") +
+								button.choose__minus.js-choose__change(type="button" data-change="-1") -
+								input(type="number" min="1" max="100" step="1" value='1' ).js-form__input.choose__input.js-choose-num
+								button.choose__plus.js-choose__change(type="button" data-change="1" ) +
 						.main-form__row
 							.main-form__date
 								.main-form__name Date:

@@ -325,7 +325,14 @@ let configForm = {
 	//     totalPriceEl ? totalPriceEl.val((val * basePrice).toFixed(2)) : null;
 	//   });
 	// });
+	$('.js-open-form-popup').on('click','.js-choose__change', function (e) {
+		let block = $(e.delegateTarget).find('.js-choose-num');
+		const val = +block.val() + Number(this.dataset.change);
 
+		if(val >= +block[0].min && val <= +block[0].max ){
+			block.val( val );
+		}
+	});
 
 	$('.js-btn-menu').on('click', function() {
 		$('.header__menu').addClass('open');
@@ -417,7 +424,6 @@ function ajax_form(e,methods,url,callback) {
 }
 
 function validateForm(self) {
-	// console.log(self);
 	let elem = $(self);
 	// const regular = new RegExp(/^[a-zA-Zа-яА-Я ёЁ`']{2,}$/);
 	// const regularTel = new RegExp(/\(?([0-9]{3})\)?(?:[ .-])([0-9]{2}[ .-]?)([0-9]{2}[ .-]?)([0-9]{3})/);

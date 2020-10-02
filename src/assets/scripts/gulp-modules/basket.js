@@ -246,8 +246,6 @@ class Basket extends BasketElem {
 
     pay(e) {
         const t = this.getProductListStorage();
-        console.log(t);
-        console.log(JSON.stringify(t));
         $('.js-products__input').val( JSON.stringify(t) );
         ajax_form(e, 'POST',"./static/admin-ajax.php", this.clearForm.bind(this));
         $('.js-minicard-close').click();
