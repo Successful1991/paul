@@ -1,0 +1,54 @@
+extends ../layout/main
+block variable
+    -
+        var crumbs = [
+        {
+        title: 'Home',
+        link: pagesLink[0].home
+        }
+        ];
+block meta
+    title= 'Home'
+    meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+    script(src='./assets/scripts/basket.js')
+    script(src='./assets/scripts/index.js')
+block content
+    include ../includes/crumbs.pug
+    .maps
+        .map(id='map')
+        .title.maps__title Restaurants
+        .rest-wrap
+            .rest
+                .rest__img
+                    img(src='/dist/assets/images/maps/1.jpg')
+                .rest__title PAUL  Yaroslavov Val
+                .rest__data
+                    .rest__address Kiev, Yaroslavov Val, 26
+                    .rest__tel +380 44 281 2493
+                    .rest__time
+                        div Mon - Fri 10:00 - 22:00
+                        div Sat - Sun 11:00 - 23:00
+                a(href="").link-dark.rest__link RESERVE
+            .rest
+                .rest__img
+                    img(src='/dist/assets/images/maps/1.jpg')
+                .rest__title PAUL  Gorodetskogo
+                .rest__data
+                    .rest__address Kiev, Yaroslavov Val, 26
+                    .rest__tel +380 44 281 2493
+                    .rest__time
+                        div Mon - Fri 10:00 - 22:00
+                        div Sat - Sun 11:00 - 23:00
+                a(href="").link-dark.rest__link RESERVE
+
+block footer
+    footer.footer
+        include ../includes/footer.pug
+
+block header
+    header.header
+        include ../includes/header.pug
+

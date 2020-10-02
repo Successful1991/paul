@@ -1,0 +1,116 @@
+.maps{
+  max-width: 1200px;
+  padding: 55px 45px 140px;
+  margin: 0 auto;
+  &__title{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    font-family: "sabon";
+    font-size: 44px;
+    font-weight: 400;
+    line-height: 54px;
+    text-align: center;
+    flex: 0 0 auto;
+    margin: 60px 0 0;
+    &:after,&:before{
+      content: "";
+      display: flex;
+      width: 100%;
+      height: 3px;
+      flex: 1 1 100%;
+      background: url("../images/maps/line.png") repeat-x;
+    }
+    &:after{
+      margin-left: 65px;
+    }
+    &:before{
+      margin-right: 65px;
+    }
+  }
+  .rest{
+    width: 100%;
+    max-width: 350px;
+    margin: 0 20px;
+    &-wrap{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      width: 100%;
+      margin-top: 62px;
+    }
+    &__img{
+      width: 100%;
+
+      img{
+        object-fit: cover;
+      }
+    }
+    &__title{
+      font-family: "sabon";
+      font-size: 22px;
+      font-weight: 400;
+      line-height: 36px;
+      margin-top: 25px;
+    }
+    &__data{
+      column-count: 2;
+      font-family: "jost";
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 30px;
+    }
+    &__address{
+      position: relative;
+      padding-left: 20px;
+      break-inside: avoid;
+      &:before{
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.5em;
+        width: 12px;
+        height: 12px;
+        background: url("../images/maps/icon/address.svg") no-repeat center /contain;
+        display: inline-block;
+      }
+    }
+    &__tel{
+      position: relative;
+      padding-left: 20px;
+      break-inside: avoid;
+      &:before{
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.5em;
+        width: 12px;
+        height: 12px;
+        background: url("../images/maps/icon/tel.svg") no-repeat center /contain;
+        display: inline-block;
+      }
+    }
+    &__time{
+      position: relative;
+      padding-left: 20px;
+      display: inline-block;
+      break-inside: avoid;
+      &:before{
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.5em;
+        width: 12px;
+        height: 14px;
+        background: url("../images/maps/icon/time.svg") no-repeat center /contain;
+        display: inline-block;
+      }
+    }
+    &__link{
+      max-width: 190px;
+      margin-top: 50px;
+    }
+
+  }
+}
+

@@ -1,0 +1,102 @@
+extends ../layout/main
+block variable
+    -
+        var crumbs = [
+        {
+        title: 'Home',
+        link: pagesLink[0].home
+        }
+        ];
+block meta
+    title= 'Home'
+    meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+    script(src='./assets/scripts/basketElem.js')
+    script(src='./assets/scripts/basket.js')
+    script(src='./assets/scripts/index.js')
+    script(src='./assets/scripts/delivery.js')
+block content
+    include ../includes/crumbs.pug
+    .delivery
+        .title.delivery__title Delivery
+        .delivery__description On this page you can find the products now available to deliver to specific London postcodes with a minimum order of £10 for delivery.The cut-off time to place your orders is 7am, and we require 24 hours’ notice. Please note that we cannot offer a specific delivery time slot. Deliveries will take place at any time between 9am and 1pm.
+
+        .delivery__tabs.js-delivery__tab
+            a(href='#'  data-type='Breakfast' ).delivery__tab Breakfast
+            a(href='#'  data-type='Main Course' ).delivery__tab Main Course
+            a(href='#'  data-type='Confectionery' ).delivery__tab Confectionery
+            a(href='#'  data-type='Drinks' ).delivery__tab Drinks
+            a(href='#'  data-type='Vienoisserie' ).delivery__tab Vienoisserie
+            a(href='#'  data-type='Bread' ).delivery__tab Bread
+            a(href='#'  data-type='Patisserie' ).delivery__tab Patisserie
+            a(href='#'  data-type='Biscuits' ).delivery__tab Biscuits
+
+        .delivery__info
+            .delivery__amount
+                | Showing
+                span.delivery__amount--num.js-delivery__amount--num 35
+                |products
+            //.delivery__sort
+            //    .delivery__sort--name Sort By:
+            //    select.delivery__selected
+            //        option(value='position' selected).delivery__select Position
+            //        option(value='name').delivery__select name
+            //        option(value='price-up').delivery__select price up
+            //        option(value='price-down').delivery__select price down
+        .delivery__products
+            .dv-product.js-product__item(data-type='Breakfast' data-id=1)
+                a(href='./product.html').dv-product__img
+                    img(src='./assets/images/delivery/semi_naked_vanilla_cake.jpg')
+                .dv-product__description
+                    .dv-product__name Summer Berry Layer Cake
+                    .dv-product__price 59 UAH
+                .dv-product__button--wrap
+                    button(type='button').dv-product__button.js-add__basket.link-dark ADD TO BASKET
+                .dv-product__discount
+                    .dv-product__new
+                        img(src='./assets/images/delivery/new.png')
+                    .dv-product__sale
+                        img(src='./assets/images/delivery/sale.png')
+            .dv-product.js-product__item(data-type='Main Course' data-id=2)
+                a(href='./product.html').dv-product__img
+                    img(src='./assets/images/delivery/semi_naked_vanilla_cake.jpg')
+                .dv-product__description
+                    .dv-product__name Summer Berry Layer Cake
+                    .dv-product__price 6 UAH
+                .dv-product__button--wrap
+                    button(type='button').dv-product__button.js-add__basket.link-dark ADD TO BASKET
+            .dv-product.js-product__item(data-type='Confectionery' data-id=3)
+                a(href='./product.html').dv-product__img
+                    img(src='./assets/images/delivery/semi_naked_vanilla_cake.jpg')
+                .dv-product__description
+                    .dv-product__name Summer Berry Layer Cake
+                    .dv-product__price 456 UAH
+                .dv-product__button--wrap
+                    button(type='button').dv-product__button.js-add__basket.link-dark ADD TO BASKET
+            .dv-product.js-product__item(data-type='Confectionery' data-id=4)
+                a(href='./product.html').dv-product__img
+                    img(src='./assets/images/delivery/semi_naked_vanilla_cake.jpg')
+                .dv-product__description
+                    .dv-product__name Summer Berry Layer Cake
+                    .dv-product__price 5875 UAH
+                .dv-product__button--wrap
+                    button(type='button').dv-product__button.js-add__basket.link-dark ADD TO BASKET
+            .dv-product.js-product__item(data-type='Drinks' data-id=4)
+                a(href='./product.html').dv-product__img
+                    img(src='./assets/images/delivery/semi_naked_vanilla_cake.jpg')
+                .dv-product__description
+                    .dv-product__name Summer Berry Layer Cake
+                    .dv-product__price 111 UAH
+                .dv-product__button--wrap
+                    button(type='button').dv-product__button.js-add__basket.link-dark ADD TO BASKET
+
+
+block footer
+    footer.footer
+        include ../includes/footer.pug
+
+block header
+    header.header
+        include ../includes/header.pug
