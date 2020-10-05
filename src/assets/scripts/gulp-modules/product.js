@@ -18,6 +18,12 @@
         )
     });
 
+    // adaptive
+    if(document.documentElement.clientWidth <= 770) {
+        console.log('sup');
+        $('.dt-accord-content').append($('.dt-dropdown__wrap'))
+    }
+
     // basket.clearProduct();
     // $('.js-dt-product__add').on('click', function () {
     //     console.log(basket);

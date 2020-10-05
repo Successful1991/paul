@@ -129,6 +129,7 @@
 	&__btn-mob {
 		display: none;
 		@include to(767px) {
+			cursor: pointer;
 			display: block;
 			max-width: 206px;
 			margin: 0 auto;
@@ -149,6 +150,7 @@
 		display: none;
 		@include to(767px) {
 			display: block;
+			cursor: pointer;
 			margin-left: 15px;
 		}
 	}

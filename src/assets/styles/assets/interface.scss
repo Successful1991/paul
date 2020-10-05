@@ -453,6 +453,38 @@
 		padding: 0 10px;
 		border: 1px solid rgba(226, 226, 226, 1);
 	}
+	&__item-change {
+		position: relative;
+		width: 50%;
+		&--calendar {
+			svg {
+				position: absolute;
+				right: 12px;
+				top: 31%;
+				width: 11px;
+				height: 12px;
+			}
+		}
+		&--time {
+			.minicard__input {
+				appearance: none;
+			}
+			.triangle {
+				position: absolute;
+				top: 45%;
+				right: 13px;
+				width: 0;
+				height: 0;
+				border-left: 4px solid transparent;
+				border-right: 4px solid transparent;
+				border-top: 4px solid $darkBlack;
+			}
+		}
+		.minicard__input {
+			width: 100%;
+			border: 1px solid #E2E2E2;
+		}
+	}
 	&__label{
 		display: flex;
 		flex-direction: column;
@@ -539,7 +571,7 @@
 		width: 32px;
 		height: 34px;
 		color: #131108;
-		font-size: 18px;
+		font-size: 11px;
 		border: 1px solid rgba(226, 226, 226, 1);
 		cursor: pointer;
 	}
@@ -578,7 +610,11 @@
 		max-width: 155px;
 		margin-right: 20px;
 		-webkit-flex-shrink: 0;
-		        flex-shrink: 0;
+				flex-shrink: 0;
+		img {
+			height: 100%;
+			width: 100%;
+		}
 		@include to(767px) {
 			max-width: 113px;
 			margin-right: 12px;
@@ -604,7 +640,8 @@
 		font-family: $default-font2;
 		font-size: 18px;
 		line-height: 1.5em;
-		color: $text;
+		text-transform: uppercase;
+		color: $darkBlack;
 		flex-shrink: 0;
 		margin: 0 0 0 auto;
 		@include to(767px) {

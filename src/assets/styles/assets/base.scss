@@ -109,10 +109,6 @@ body input:focus:required:invalid, body textarea:focus:required:invalid {
   border-color: red;
 }
 
-body input:required:valid, body textarea:required:valid {
-  border-color: green;
-}
-
 img {
   width: 100%;
   display: block;

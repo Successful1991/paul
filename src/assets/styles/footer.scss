@@ -28,8 +28,9 @@
 	}
 	&__name {
 		color: $cream;
-		font-size: 16px;
-		margin-bottom: 5px;
+		font-size: 18px;
+		line-height: 1.5em;
+		margin-bottom: 19px;
 		@include to(767px) {
 			text-align: center;
 			font-size: 14px;
@@ -52,12 +53,14 @@
 	}
 	&__adress-icon svg {
 		width: 9px;
-		height: 9px;
+		height: 11px;
 	}
 	&__adress-name {
 		font-family: $default-font2;
 		color: #9E9F9C;
 		margin-left: 10px;
+		font-size: 14px;
+		line-height: 1.6em;
 	}
 	&__icons {
 		display: flex;
