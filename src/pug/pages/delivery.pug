@@ -38,59 +38,71 @@ block content
                 | Showing
                 span.delivery__amount--num.js-delivery__amount--num 35
                 |products
-            //.delivery__sort
-            //    .delivery__sort--name Sort By:
-            //    select.delivery__selected
-            //        option(value='position' selected).delivery__select Position
-            //        option(value='name').delivery__select name
-            //        option(value='price-up').delivery__select price up
-            //        option(value='price-down').delivery__select price down
-        .delivery__products
-            .dv-product.js-product__item(data-type='Breakfast' data-id=1)
-                a(href='./product.html').dv-product__img
-                    img(src='./assets/images/delivery/semi_naked_vanilla_cake.jpg')
-                .dv-product__description
-                    .dv-product__name Summer Berry Layer Cake
-                    .dv-product__price 59 UAH
-                .dv-product__button--wrap
-                    button(type='button').dv-product__button.js-add__basket.link-dark ADD TO BASKET
-                .dv-product__discount
-                    .dv-product__new
-                        img(src='./assets/images/delivery/new.png')
-                    .dv-product__sale
-                        img(src='./assets/images/delivery/sale.png')
-            .dv-product.js-product__item(data-type='Main Course' data-id=2)
-                a(href='./product.html').dv-product__img
-                    img(src='./assets/images/delivery/semi_naked_vanilla_cake.jpg')
-                .dv-product__description
-                    .dv-product__name Summer Berry Layer Cake
-                    .dv-product__price 6 UAH
-                .dv-product__button--wrap
-                    button(type='button').dv-product__button.js-add__basket.link-dark ADD TO BASKET
-            .dv-product.js-product__item(data-type='Confectionery' data-id=3)
-                a(href='./product.html').dv-product__img
-                    img(src='./assets/images/delivery/semi_naked_vanilla_cake.jpg')
-                .dv-product__description
-                    .dv-product__name Summer Berry Layer Cake
-                    .dv-product__price 456 UAH
-                .dv-product__button--wrap
-                    button(type='button').dv-product__button.js-add__basket.link-dark ADD TO BASKET
-            .dv-product.js-product__item(data-type='Confectionery' data-id=4)
-                a(href='./product.html').dv-product__img
-                    img(src='./assets/images/delivery/semi_naked_vanilla_cake.jpg')
-                .dv-product__description
-                    .dv-product__name Summer Berry Layer Cake
-                    .dv-product__price 5875 UAH
-                .dv-product__button--wrap
-                    button(type='button').dv-product__button.js-add__basket.link-dark ADD TO BASKET
-            .dv-product.js-product__item(data-type='Drinks' data-id=4)
-                a(href='./product.html').dv-product__img
-                    img(src='./assets/images/delivery/semi_naked_vanilla_cake.jpg')
-                .dv-product__description
-                    .dv-product__name Summer Berry Layer Cake
-                    .dv-product__price 111 UAH
-                .dv-product__button--wrap
-                    button(type='button').dv-product__button.js-add__basket.link-dark ADD TO BASKET
+            //- .delivery__sort
+            //-     .delivery__sort--name Sort By:
+            //-     .delivery__wrapper-custom
+            //-         select.delivery__selected
+            //-             option(value='position' selected).delivery__select Position
+            //-             option(value='name').delivery__select name
+            //-             option(value='price-up').delivery__select price up
+            //-             option(value='price-down').delivery__select price down
+        .delivery__products-content
+            .delivery__products
+                .dv-product.js-product__item(data-type='Breakfast' data-id=1)
+                    a(href='./product.html').dv-product__img
+                        img(src='./assets/images/delivery/semi_naked_vanilla_cake.jpg')
+                    .dv-product__description
+                        .dv-product__name Summer Berry Layer Cake
+                        .dv-product__price 59 UAH
+                    .dv-product__button--wrap
+                        button(type='button').dv-product__button.js-add__basket.link-dark ADD TO BASKET
+                    .dv-product__discount
+                        .dv-product__new
+                            img(src='./assets/images/delivery/new.png')
+                        .dv-product__sale
+                            img(src='./assets/images/delivery/sale.png')
+                .dv-product.js-product__item(data-type='Main Course' data-id=2)
+                    a(href='./product.html').dv-product__img
+                        img(src='./assets/images/delivery/semi_naked_vanilla_cake.jpg')
+                    .dv-product__description
+                        .dv-product__name Summer Berry Layer Cake
+                        .dv-product__price 6 UAH
+                    .dv-product__button--wrap
+                        button(type='button').dv-product__button.js-add__basket.link-dark ADD TO BASKET
+                .dv-product.js-product__item(data-type='Confectionery' data-id=3)
+                    a(href='./product.html').dv-product__img
+                        img(src='./assets/images/delivery/semi_naked_vanilla_cake.jpg')
+                    .dv-product__description
+                        .dv-product__name Summer Berry Layer Cake
+                        .dv-product__price 456 UAH
+                    .dv-product__button--wrap
+                        button(type='button').dv-product__button.js-add__basket.link-dark ADD TO BASKET
+                .dv-product.js-product__item(data-type='Confectionery' data-id=4)
+                    a(href='./product.html').dv-product__img
+                        img(src='./assets/images/delivery/semi_naked_vanilla_cake.jpg')
+                    .dv-product__description
+                        .dv-product__name Summer Berry Layer Cake
+                        .dv-product__price 5875 UAH
+                    .dv-product__button--wrap
+                        button(type='button').dv-product__button.js-add__basket.link-dark ADD TO BASKET
+                .dv-product.js-product__item(data-type='Drinks' data-id=4)
+                    a(href='./product.html').dv-product__img
+                        img(src='./assets/images/delivery/semi_naked_vanilla_cake.jpg')
+                    .dv-product__description
+                        .dv-product__name Summer Berry Layer Cake
+                        .dv-product__price 111 UAH
+                    .dv-product__button--wrap
+                        button(type='button').dv-product__button.js-add__basket.link-dark ADD TO BASKET
+            .pagination
+                .pagination__item
+                    a(class="pagination__link pagination__link--active" href="#") 1
+                .pagination__item
+                    a(class="pagination__link" href="#") 2
+                .pagination__item
+                    a(class="pagination__link" href="#") 3
+                .pagination__item
+                    a(class="pagination__next pagination__link")
+                        +svg('pagination-arrow')
 
 
 block footer

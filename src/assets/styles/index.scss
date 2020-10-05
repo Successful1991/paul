@@ -194,7 +194,7 @@
 .products-slider {
 	position: relative;
 	@include to(767px) {
-		width: 290px;
+		max-width: 400px;
 		margin: 0 auto;
 	}
 	&__item {
@@ -210,6 +210,8 @@
 	&__info {
 		display: flex;
 		justify-content: space-between;
+		font-size: 18px;
+		line-height: 1.5em;
 	}
 	&__line {
 		position: absolute;
@@ -266,10 +268,9 @@
 		color: $darkBlack;
 		padding: 0px 12px;
 	}
+
 	&__price span {
-		font-size: 10px;
-		color: $text;
-		font-family: $default-font2;
+		text-transform: uppercase;
 	}
 	&__btns {
 		position: absolute;
@@ -692,6 +693,7 @@
 	@include to(1200px) {
 		padding: 100px 45px;
 	}
+
 	@include to(767px) {
 		padding: 80px 15px;
 	}
@@ -726,9 +728,11 @@
 		color: $darkBlack;
 	}
 	&__text p {
-		font-size: 12px;
+		font-size: 14px;
+		line-height: 1.7em;
 		font-family: $default-font2;
 		color: $text;
+		padding-left: 20px;
 	}
 }
 
@@ -737,7 +741,8 @@
 		display: flex;
 		-webkit-flex-direction: column;
 		    -ms-flex-direction: column;
-		        flex-direction: column;
+				flex-direction: column;
+		margin: 0 5px;
 	}
 }
 

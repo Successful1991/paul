@@ -88,7 +88,7 @@
 		.minicard__content
 			.minicard__top
 				.minicard__title
-					span.minicard__title-big Shopping Basket
+					span.minicard__title-big Your Order
 				.minicard__close.js-minicard-close
 					img(src="./assets/images/close-popup.svg")
 			.minicard__center
@@ -104,19 +104,23 @@
 					input(type='text' name="name" required).minicard__input.js-form__input
 				label.minicard__phone.minicard__label
 					span Phone number:
-					input(type='text' name="phone" required).minicard__input.js-form__input.inputTelMask
+					input(type='text' name="phone" placeholder="+380 (99) 999-99-99" required).minicard__input.js-form__input.inputTelMask
 				label.minicard__mail.minicard__label
 					span E-mail:
 					input(type='mail' name="mail" required).minicard__input.js-form__input
 				label.minicard__date.minicard__label
 					span Collection Date:
-					input(type='text' name="date" required).minicard__input.js-minicard__date.js-form__input
+					.minicard__item-change.minicard__item-change--calendar
+						+svg('calendar')
+						input(type='text' name="date" required).minicard__input.js-minicard__date.js-form__input
 				label.minicard__date.minicard__label
 					span Collection Time:
-					select(name="time").minicard__input.js-minicard__time.js-form__input
-						option(value=11) 11:00 - 12:00
-						option(value=12) 12:00 - 13:00
-						option(value=13) 13:00 - 14:00
+					.minicard__item-change.minicard__item-change--time
+						.triangle
+						select(name="time").minicard__input.js-minicard__time.js-form__input
+							option(value=11) 11:00 - 12:00
+							option(value=12) 12:00 - 13:00
+							option(value=13) 13:00 - 14:00
 				fieldset.minicard__delivery.minicard__label
 					span Delivery:
 					input(type='radio' name='delivery' id="delivery-1" value="sm1" checked).minicard__input.js-minicard__delivery.js-form__input
