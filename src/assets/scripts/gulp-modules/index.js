@@ -20,7 +20,6 @@ let configForm = {
 	}
 };
 
-
 (function ($) {
 	function loader() {
 		$(".loader-wrap").delay(2500).fadeOut(500);
@@ -52,8 +51,13 @@ let configForm = {
 
 	$('.js-call-form').on('click', function (e) {
 		e.preventDefault();
-		ajax_form(e, 'POST',"./static/admin-ajax.php");
+		ajax_form(e, 'POST',"./static/admin-ajax.php", clearPopup);
 	});
+
+	function clearPopup() {
+		location.href = '/thanks'
+	}
+
 	// $('#js-call-form').on('submit', function (event) {
 	// 	event.preventDefault();
 	// 	ajax_form(event, 'POST',"/wp-admin/form.php");
@@ -220,7 +224,6 @@ let configForm = {
 	// 	}
 	// }
 
-
 	// function get(sand, url, parse, callback) {
 	// 	$.ajax({
 	// 		url: url,
@@ -278,7 +281,6 @@ let configForm = {
 	// };
 	// telMask();
 	$(".inputTelMask").mask("+(38) 0** ***-**-**");
-
 
 	//plus minus
 	// const number = $('.js-choose');
@@ -343,7 +345,6 @@ let configForm = {
 		$('.header__menu').removeClass('open');
 		$('body').addClass('overflow');
 	});
-
 
 	$('.js-minicard-close').on('click', function () {
 		$('.minicard').removeClass('open');
@@ -514,7 +515,7 @@ function formSelectDate() {
 		dateSelected : date,
 		showAllDates: true,
 		startDate : new Date(date.getFullYear(), date.getMonth(), 1),
-		maxDate: new Date (date.getTime() + (4 * 24 * 3600 * 1000)),
+		maxDate: new Date (date.getTime() + (61 * 24 * 3600 * 1000)),
 		minDate : date,
 		startDay : 1 ,
 		disableYearOverlay : true,
@@ -530,10 +531,97 @@ function formSelectDate() {
 		onSelect : instance => {
 			if(instance.dateSelected) curDate = instance.dateSelected;
 			instance.setDate(curDate);
-			// this.setDeliveryTime(instance.days[+instance.dateSelected.getDay() - 1]);
+			this.setPopupTime(instance.days[+instance.dateSelected.getDay() - 1]);
 			// setTimeout(()=>instance.hide(),0)
 		},
 	});
 
 	// this.setDeliveryTime(picker.days[picker.dateSelected.getDay()-1])
+}
+
+
+function setPopupTime(date) {
+	const delivery = {
+		weekday: {
+			days : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+			time: [
+				{from: '08:00', to: '08:30'},
+				{from: '08:30', to: '09:00'},
+				{from: '09:00', to: '09:30'},
+				{from: '09:30', to: '10:00'},
+				{from: '10:00', to: '10:30'},
+				{from: '10:30', to: '11:00'},
+				{from: '11:00', to: '11:30'},
+				{from: '11:30', to: '12:00'},
+				{from: '12:00', to: '12:30'},
+				{from: '12:30', to: '13:00'},
+				{from: '13:00', to: '13:30'},
+				{from: '13:30', to: '14:00'},
+				{from: '14:00', to: '14:30'},
+				{from: '14:30', to: '15:00'},
+				{from: '15:00', to: '15:30'},
+				{from: '15:30', to: '16:00'},
+				{from: '16:00', to: '16:30'},
+				{from: '16:30', to: '17:00'},
+				{from: '17:00', to: '17:30'},
+				{from: '17:30', to: '18:00'},
+				{from: '18:00', to: '18:30'},
+				{from: '18:30', to: '19:00'},
+				{from: '19:00', to: '19:30'},
+				{from: '19:30', to: '20:00'},
+				{from: '20:00', to: '20:30'},
+				{from: '20:30', to: '21:00'}]
+		},
+		weekend: {
+			days : ['Sat','Sun'],
+			time: [
+				{from: '09:00', to: '09:30'},
+				{from: '09:30', to: '10:00'},
+				{from: '10:00', to: '10:30'},
+				{from: '10:30', to: '11:00'},
+				{from: '11:00', to: '11:30'},
+				{from: '11:30', to: '12:00'},
+				{from: '12:00', to: '12:30'},
+				{from: '12:30', to: '13:00'},
+				{from: '13:00', to: '13:30'},
+				{from: '13:30', to: '14:00'},
+				{from: '14:00', to: '14:30'},
+				{from: '14:30', to: '15:00'},
+				{from: '15:00', to: '15:30'},
+				{from: '15:30', to: '16:00'},
+				{from: '16:00', to: '16:30'},
+				{from: '16:30', to: '17:00'},
+				{from: '17:00', to: '17:30'},
+				{from: '17:30', to: '18:00'},
+				{from: '18:00', to: '18:30'},
+				{from: '18:30', to: '19:00'},
+				{from: '19:00', to: '19:30'},
+				{from: '19:30', to: '20:00'},
+				{from: '20:00', to: '20:30'},
+				{from: '20:30', to: '21:00'},
+				{from: '21:00', to: '21:30'},
+				{from: '21:30', to: '22:00'},
+				{from: '22:00', to: '22:30'},
+				{from: '22:30', to: '23:00'}
+				]
+		}
+	};
+
+	for( let d in delivery) {
+		if( delivery[d].days.includes(date) ){
+
+			delivery[d].time.forEach( (el, i) => {
+				let option = document.createElement('option');
+				option.value = el.from;
+				option.text = `${el.from}`;
+				// option.text = `${el.from} - ${el.to}`;
+				if(i === 0){
+					option.selected = true;
+					$('.js-form__time').html('');
+				}
+
+				$('.js-form__time').append(option);
+			});
+		}
+	};
 }

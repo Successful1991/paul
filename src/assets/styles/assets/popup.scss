@@ -33,7 +33,11 @@
 	&__left {
 		width: 50%;
 		background: $cream;
-		padding: 58px 42px;
+		padding: 58px 75px;
+		@include to(1023px) {
+			width: 70%;
+			padding: 40px;
+		}
 		@include to(767px) {
 			width: 100%;
 			padding: 29px;
@@ -54,7 +58,8 @@
 }
 
 .main-form {
-	max-width: 192px;
+	max-width: 255px;
+	margin: 0 auto;
 	@include to(767px) {
 		max-width: 100%;
 	}
@@ -128,6 +133,28 @@
 		@include to(767px) {
 			width: 100%;
 		}
+	}
+	&__market{
+		margin: 0 0 10px;
+		&-select{
+			height: 34px;
+			width: 100%;
+			padding: 0 20px 0 10px;
+			border: 1px solid #E2E2E2;
+			color: $text;
+			font-family: $default-font2;
+			margin: 0;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			background: url('../images/arrow-select.svg') no-repeat calc(100% - 10px) 50%;
+			option {
+				color: $text;
+			}
+		}
+
 	}
 }
 
